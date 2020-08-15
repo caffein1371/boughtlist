@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">boughtlist</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_buy_list_add">BuyListAdd</string>
+    <string name="action_delete">Delete</string>
+    <string name="inputitemView">品物入力</string>
+    <string name="inputitembar">ex)豚バラ</string>
+    <string name="input_place">ex)大宮ダイエー</string>
+    <string name="choosegram">グラム売り</string>
+    <string name="chooseamount">個数売り</string>
+    <string name="chooseother">その他</string>
+    <string name="inputplaceView">場所</string>
+    <string name="inputPrice">大宮ダイエー</string>
+    <string name="normalPrice">通常価格</string>
+    <string name="forSale">セール品％</string>
+    <string name="tokubai">特売</string>
+    <string name="shopname">ダイエー大宮店</string>
+    <string name="registerbutton">登録</string>
+    <string name="deletebutton">削除</string>
+    <string name="gramtext">g</string>
+    <string name="gramyentext">円</string>
+    <string name="koyentext">円</string>
+    <string name="kotext">コ</string>
+    <string name="otheryen">円</string>
+</resources>

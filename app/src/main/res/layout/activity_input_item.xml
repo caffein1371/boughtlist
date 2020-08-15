@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".inputItemActivity">
+
+            <TextView
+                android:id="@+id/inputitemView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/inputitemView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputitembar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/inputitembar"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputitemView"
+                android:autofillHints="" />
+
+            <RadioGroup
+                android:id="@+id/choose_how_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputitembar">
+
+                <RadioButton
+                    android:id="@+id/chooseGram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/choosegram" />
+
+                <RadioButton
+                    android:id="@+id/chooseAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/chooseamount" />
+
+                <RadioButton
+                    android:id="@+id/chooseOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/chooseother" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/inputplaceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/inputplaceView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/choose_how_input" />
+
+            <EditText
+                android:id="@+id/inputPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/shopname"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputplaceView" />
+
+            <RadioGroup
+                android:id="@+id/choose_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPlace">
+
+                <RadioButton
+                    android:id="@+id/normalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/normalPrice" />
+
+                <RadioButton
+                    android:id="@+id/forSale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forSale" />
+
+                <RadioButton
+                    android:id="@+id/tokubai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tokubai" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/registerbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/registerbutton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/choose_price" />
+
+            <Button
+                android:id="@+id/deletebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/deletebutton"
+                app:layout_constraintStart_toEndOf="@+id/registerbutton"
+                app:layout_constraintTop_toBottomOf="@+id/choose_price" />
+
+            <EditText
+                android:id="@+id/gramInput"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="4"
+                app:layout_constraintStart_toEndOf="@+id/choose_how_input"
+                app:layout_constraintTop_toBottomOf="@+id/inputitembar"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/koInput"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="4"
+                app:layout_constraintStart_toEndOf="@+id/choose_how_input"
+                app:layout_constraintTop_toBottomOf="@+id/gramInput"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/otherYenInput"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="4"
+                app:layout_constraintStart_toEndOf="@+id/choose_how_input"
+                app:layout_constraintTop_toBottomOf="@+id/koInput"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/gramtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="45dp"
+                android:text="@string/gramtext"
+                app:layout_constraintStart_toEndOf="@+id/gramInput"
+                app:layout_constraintTop_toBottomOf="@+id/inputitembar" />
+
+            <EditText
+                android:id="@+id/gramYen"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/gramtext"
+                app:layout_constraintTop_toBottomOf="@+id/inputitembar"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/gramyentext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="140dp"
+                android:text="@string/gramyentext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gramYen"
+                app:layout_constraintTop_toBottomOf="@+id/inputitembar" />
+
+            <TextView
+                android:id="@+id/kotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/kotext"
+                app:layout_constraintStart_toEndOf="@+id/koInput"
+                app:layout_constraintTop_toBottomOf="@+id/gramtext" />
+
+            <EditText
+                android:id="@+id/koYen"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintStart_toEndOf="@+id/kotext"
+                app:layout_constraintTop_toBottomOf="@+id/gramYen"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/koyentext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="140dp"
+                android:text="@string/koyentext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/koYen"
+                app:layout_constraintTop_toBottomOf="@+id/gramyentext" />
+
+            <TextView
+                android:id="@+id/otheryen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/otheryen"
+                app:layout_constraintStart_toEndOf="@+id/otherYenInput"
+                app:layout_constraintTop_toBottomOf="@+id/kotext" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
