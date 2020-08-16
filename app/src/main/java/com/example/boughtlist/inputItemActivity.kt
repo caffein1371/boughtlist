@@ -153,10 +153,11 @@ class inputItemActivity : AppCompatActivity() {
                     }
                     inputItem.saleflag = saleflag
                     inputItem.place = inputPlace.text.toString()
-                    Snackbar.make(view, "追加しました", Snackbar.LENGTH_LONG)
-                        .setAction("戻る") { finish() }
-                        .setActionTextColor(Color.YELLOW)
-                        .show()
+                    finish()
+//                    Snackbar.make(view, "追加しました", Snackbar.LENGTH_LONG)
+//                        .setAction("戻る") { finish() }
+//                        .setActionTextColor(Color.YELLOW)
+//                        .show()
                 }
             } else {
                 realm.executeTransaction { db: Realm ->
