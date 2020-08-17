@@ -95,15 +95,24 @@ class buyListAddActivity : AppCompatActivity() {
                         ?.deleteFromRealm()
                     finish()
                 }
+                return true
+            }
+            R.id.action_sort_name -> {
+                val itemList = realm.where<InputItem>().equalTo("genreId",genreID).findAll().sort("itemname")
+                val adapter = InputItemAdapter(itemList)
+                buylist.adapter = adapter
+                return true
+            }
 //                Snackbar.make(view, "削除しました", Snackbar.LENGTH_SHORT)
 //                    .setAction("戻る") { finish() }
 //                    .setActionTextColor(Color.YELLOW)
 //                    .show()
 //            }
-                return true
-            }
+
+//            }
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
 

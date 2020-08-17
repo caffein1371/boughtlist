@@ -30,4 +30,8 @@
     <string name="koyentext">円</string>
     <string name="kotext">コ</string>
     <string name="otheryen">円</string>
+    <string name="action_sort_name">Item</string>
+    <string name="sort_name">Sort Name</string>
+    <string name="extract_sale">セール品除外</string>
+    <string name="extract_sale_switch">Switch</string>
 </resources>
