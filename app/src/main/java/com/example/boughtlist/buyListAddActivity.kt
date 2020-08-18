@@ -100,7 +100,9 @@ class buyListAddActivity : AppCompatActivity() {
             R.id.action_sort_name -> {
                 val itemList = realm.where<InputItem>().equalTo("genreId",genreID).findAll().sort("itemname")
                 val adapter = InputItemAdapter(itemList)
-                buylist.adapter = adapter
+                adapter.notifyDataSetChanged()
+                //buylist.adapter = adapter
+
                 return true
             }
 //                Snackbar.make(view, "削除しました", Snackbar.LENGTH_SHORT)
