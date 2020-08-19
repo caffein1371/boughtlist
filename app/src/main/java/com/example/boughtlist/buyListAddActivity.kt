@@ -6,14 +6,18 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
 import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_buy_list_add2.*
 
+
 class buyListAddActivity : AppCompatActivity() {
     private lateinit var realm: Realm
+    private lateinit var adapter: InputItemAdapter
     var genreID:Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +36,7 @@ class buyListAddActivity : AppCompatActivity() {
         buylist.layoutManager = LinearLayoutManager(this)
         //genreidと同じものだけを表示
         val itemList = realm.where<InputItem>().equalTo("genreId",genreID).findAll()
-        val adapter = InputItemAdapter(itemList)
+        adapter = InputItemAdapter(itemList)
         buylist.adapter = adapter
 
         adapter.setOnItemClickListener {inputitem->
@@ -79,6 +83,8 @@ class buyListAddActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_buylistadd, menu)
@@ -97,21 +103,18 @@ class buyListAddActivity : AppCompatActivity() {
                 }
                 return true
             }
+
             R.id.action_sort_name -> {
                 val itemList = realm.where<InputItem>().equalTo("genreId",genreID).findAll().sort("itemname")
-                val adapter = InputItemAdapter(itemList)
+                adapter = InputItemAdapter(itemList)
+                buylist.adapter = adapter
                 adapter.notifyDataSetChanged()
-                //buylist.adapter = adapter
+                //TODO
+                //ソートをした後にadapterをクリックしても画面遷移しない問題を解決する
+                //adapterが入れ替わるとsetonclicklisterが動かない？
 
                 return true
             }
-//                Snackbar.make(view, "削除しました", Snackbar.LENGTH_SHORT)
-//                    .setAction("戻る") { finish() }
-//                    .setActionTextColor(Color.YELLOW)
-//                    .show()
-//            }
-
-//            }
         }
         return super.onOptionsItemSelected(item)
     }
